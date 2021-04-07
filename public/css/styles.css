@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway:wght@200;400&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background: url("/img/notes.jpg") center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 0.5em 1em;
+  max-width: 500px;
+  margin: 30px auto;
+  z-index: 5;
+}
+
+.header {
+  padding: 0.5em;
+  width: 100%;
+  text-align: center;
+  text-transform: capitalize;
+  color: #f3f3f3;
+  background-color: #1d1a1a;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid #807f7f;
+}
+
+.box {
+  margin: 1.5em 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.item {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+  padding: 1rem;
+  background-color: #f3f3f3;
+  display: flex;
+  /* -webkit-box-align: center; */
+}
+
+.taskIcon {
+  justify-self: flex-end;
+  margin-left: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.check,
+.delete {
+  width: 10%;
+}
+
+.text {
+  width: 80%;
+}
+
+.form {
+  background-color: #f3f3f3;
+
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  margin: 0;
+}
+
+.txtInput {
+  width: 90%;
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  background-color: #f3f3f3;
+  text-align: left;
+  color: #333333;
+}
+
+::placeholder {
+  color: #333333;
+  opacity: 0.5;
+}
+
+.btn {
+  border-color: transparent;
+  padding: 0 1rem;
+  font-size: 20px;
+  margin: auto;
+  background-color: #333333;
+  color: #f3f3f3;
+  text-align: center;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+.btn-link {
+  text-decoration: none;
+  color: #f3f3f3;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.pagination {
+  padding: 0.8em 0;
+  display: flex;
+  justify-content: center;
+  background-color: #f3f3f3;
+
+  border-top: 1px solid #807f7f;
+}
+
+.pageBtn {
+  background-color: #333333;
+  color: #f3f3f3;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.pageCounter {
+  margin: 0 0.5em;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  color: #f3f3f3;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+@media (max-width: 800px) {
+  .container {
+    padding: 0 0.5em;
+    width: 100%;
+    min-width: 320px;
+  }
+
+  .form {
+    padding: 1em;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+}

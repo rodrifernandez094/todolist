@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/5908add486.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="header">
+          <h2><%= listTitle %></h2>
+        </div>
+        <div class="box">
+          <div class="list">
+            <% visibleItems.forEach(newListItem => { %>
+
+            <div class="item">
+              <span class="text"><%= newListItem.content %></span>
+              <div class="taskIcon check"><i class="fas fa-check"></i></div>
+              <!-- <div class="taskIcon delete"> -->
+              <!-- prettier-ignore -->
+              <a class="taskIcon delBtn" data-item="<%= newListItem._id %> "><i class="fas fa-trash-alt"></i></a>
+              <!-- </div> -->
+            </div>
+
+            <% }) %>
+          </div>
+          <form action="/" method="post" class="form" id="listForm">
+            <input
+              type="text"
+              name="newItem"
+              id="txtNewItem"
+              class="txtInput"
+              placeholder="New Item"
+              autocomplete="off"
+            />
+            <button type="submit" class="btn add" name="button" value="add">+</button>
+          </form>
+
+          <% if ( totalPages > 1) { %>
+          <!-- prettier-ignore -->
+
+          <div class="pagination">
+            <% if (hasPrevPage) { %>
+              <% let counter = parseInt(currentPage) - 1 %>
+            <!-- prettier-ignore -->
+            <button class="pageBtn" name="button" on>
+              <a class="btn-link" href="/<%= counter %>"> < </a>
+            </button>
+
+            <% } %>
+
+            <span class="pageCounter"><%= currentPage %> of <%= totalPages %></span>
+
+            <% if (hasNextPage) { %>
+              <% let counter = parseInt(currentPage) + 1 %>
+            <!-- prettier-ignore -->
+            <button class="pageBtn" name="button" value="next">
+              <a class="btn-link" href="/<%= counter %>"> > </a>
+            </button>
+
+            <% } %>
+          </div>
+
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">Rodrigo Fernandez 2020</footer>
+    <script src="/js/index.js"></script>
+  </body>
+</html>
